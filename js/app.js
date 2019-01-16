@@ -23,11 +23,11 @@ class Enemy {
             this.speed = ((Math.random()) * 240 + speed);
         };
         //colision
-        if ((player.playerX < this.enemyX + 90) && (player.playerX + 75 > this.enemyX) && (player.playerY < this.enemyY + 60) &&
-            (60 + player.playerY > this.enemyY)) {
+        if ((image.imageX < this.enemyX + 90) && (image.imageX + 75 > this.enemyX) && (image.imageY < this.enemyY + 60) &&
+            (60 + image.imageY > this.enemyY)) {
             speed = 100;
             currentLevel = 1;
-            player.characterReset();
+            image.characterReset();
             updateLevel();
             swal({
                 title: 'Ops!!! Try again!!!',
@@ -40,35 +40,35 @@ class Enemy {
         ctx.drawImage(Resources.get(this.sprite), this.enemyX, this.enemyY);
     }
 }
-// Now write your own player class
+// Now write your own image class
 // This class requires an update(), render() and
 // a handleInput() method.
 class Player {
-    constructor(playerX, playerY) {
-        this.playerX = playerX;
-        this.playerY = playerY;
-        this.player = 'images/char-horn-girl.png';
+    constructor(imageX, imageY) {
+        this.imageX = imageX;
+        this.imageY = imageY;
+        this.image = 'images/char-horn-girl.png';
     }
     update(dt) {
     }
     render() {
-        ctx.drawImage(Resources.get(this.player), this.playerX, this.playerY);
+        ctx.drawImage(Resources.get(this.image), this.imageX, this.imageY);
     }
     //moviments inside the canvas
     handleInput(keyPress) {
-        if (keyPress == 'left' && this.playerX > 0) {
-            this.playerX -= 100;
+        if (keyPress == 'left' && this.imageX > 0) {
+            this.imageX -= 100;
         };
-        if (keyPress == 'right' && this.playerX < 400) {
-            this.playerX += 100;
+        if (keyPress == 'right' && this.imageX < 400) {
+            this.imageX += 100;
         };
-        if (keyPress == 'up' && this.playerY > 0) {
-            this.playerY -= 80;
+        if (keyPress == 'up' && this.imageY > 0) {
+            this.imageY -= 80;
         };
-        if (keyPress == 'down' && this.playerY < 400) {
-            this.playerY += 70;
+        if (keyPress == 'down' && this.imageY < 400) {
+            this.imageY += 70;
         };
-        if (this.playerY < 0) {
+        if (this.imageY < 0) {
             swal({
                 title: 'Good job!',
                 title: 'Next Level',
@@ -80,8 +80,8 @@ class Player {
     }
     //palyer initial position 
     characterReset() {
-        player.playerX = 200;
-        player.playerY = 350;
+        this.imageX = 200;
+        this.imageY = 350;
     }
     //Increase speed  and level.
     //Compare and keep highest level.
@@ -107,8 +107,8 @@ function updateLevel() {
     document.getElementById("high-level").innerText = "Highest Level  " + highestLevel;
 }
 
-// Place the player object in a variable called player
-let player = new Player(200, 350);
+// Place the image object in a variable called image
+let image = new Player(200, 350);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -119,7 +119,7 @@ document.addEventListener('keyup', function (e) {
         39: 'right',
         40: 'down'
     };
-    player.handleInput(allowedKeys[e.keyCode]);
+    image.handleInput(allowedKeys[e.keyCode]);
 });
 
 // Place all enemy objects in an array called allEnemies       
