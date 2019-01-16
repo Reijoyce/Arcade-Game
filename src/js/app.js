@@ -8,7 +8,7 @@ class Enemy {
         this.enemyX = enemyX;
         this.enemyY = enemyY;
         this.speed = speed;
-        this.sprite = 'images/enemy-bug.png';
+        this.sprite = 'src/images/enemy-bug.png';
     }
     // Update the enemy's position, required method for game
     // Parameter: dt, a time delta between ticks
@@ -47,7 +47,7 @@ class Player {
     constructor(imageX, imageY) {
         this.imageX = imageX;
         this.imageY = imageY;
-        this.image = 'images/char-horn-girl.png';
+        this.image = 'src/images/char-horn-girl.png';
     }
     update(dt) {
     }
