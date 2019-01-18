@@ -22,7 +22,7 @@ function () {
     this.enemyX = enemyX;
     this.enemyY = enemyY;
     this.speed = speed;
-    this.sprite = 'src/images/enemy-bug.png';
+    this.sprite = './dist/images/enemy-bug.png';
   } // Update the enemy's position, required method for game
   // Parameter: dt, a time delta between ticks
 
@@ -77,7 +77,7 @@ function () {
 
     this.imageX = imageX;
     this.imageY = imageY;
-    this.image = 'src/images/char-horn-girl.png';
+    this.image = './distdist/images/char-horn-girl.png';
   }
 
   _createClass(Player, [{
@@ -291,12 +291,12 @@ var Engine = function (global) {
     /* This array holds the relative URL to the image used
      * for that particular row of the game level.
      */
-    var rowImages = ['src/images/water-block.png', // Top row is water
-    'src/images/stone-block.png', // Row 1 of 3 of stone
-    'src/images/stone-block.png', // Row 2 of 3 of stone
-    'src/images/stone-block.png', // Row 3 of 3 of stone
-    'src/images/grass-block.png', // Row 1 of 2 of grass
-    'src/images/grass-block.png' // Row 2 of 2 of grass
+    var rowImages = ['./dist/images/water-block.png', // Top row is water
+    './dist/images/stone-block.png', // Row 1 of 3 of stone
+    './dist/images/stone-block.png', // Row 2 of 3 of stone
+    './dist/images/stone-block.png', // Row 3 of 3 of stone
+    './dist/images/grass-block.png', // Row 1 of 2 of grass
+    './dist/images/grass-block.png' // Row 2 of 2 of grass
     ],
         numRows = 6,
         numCols = 5,
@@ -353,7 +353,7 @@ var Engine = function (global) {
    */
 
 
-  Resources.load(['src/images/stone-block.png', 'src/images/water-block.png', 'src/images/grass-block.png', 'src/images/enemy-bug.png', 'src/images/char-horn-girl.png']);
+  Resources.load(['./dist/images/stone-block.png', './dist/images/water-block.png', './dist/images/grass-block.png', './dist/images/enemy-bug.png', './dist/images/char-horn-girl.png']);
   Resources.onReady(init);
   /* Assign the canvas' context object to the global variable (the window
    * object when run in a browser) so that developers can use it more easily
@@ -431,7 +431,7 @@ var Engine = function (global) {
       };
       /* Set the initial cache value to false, this will change when
        * the image's onload event handler is called. Finally, point
-       * the image's src attribute to the passed in URL.
+       * the image's ./dist attribute to the passed in URL.
        */
 
 
