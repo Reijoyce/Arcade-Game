@@ -9,13 +9,14 @@ const uglify = require('gulp-uglify');
 
 //Autoprefix the CSS using gulp-autoprefixer 
 //Minify the CSS using gulp-clean-css
-gulp.task('css', () => {
+gulp.task('css', (done) => {
     return gulp.src('./src/css/**/*.css') 
     .pipe(autoprefixer({
         browsers: ['last 2 versions']
     }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('dist/css'));
+    done();
 });
 
 //Optimize the images using gulp-imagemin
