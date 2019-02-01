@@ -1,5 +1,17 @@
 # Classic Arcade Game Clone Project
+Summary
+The classic Frogger Arcade Game developed by Konami. This game is a project taht is part of the Udacity Front End Nanodegree
 
+How to play
+You got to get the palyer from the green grass to the river and avoid all the bugs in the process
+
+Installation
+To run this application, download the Github zip file or clone the repository. 
+
+Resources
+https://developer.mozzilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+
+https://en.wikipedia.org/wiki/Froger
 ## Table of Contents
 
 - [Instructions](#instructions)
